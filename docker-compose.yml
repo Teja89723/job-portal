@@ -1,0 +1,37 @@
+version: "3.8"
+
+# Spins up a local MySQL that matches the LOCAL DEFAULTS baked into
+# src/main/resources/application.properties, so `docker compose up -d`
+# followed by running the app in VS Code / IntelliJ "just works" with
+# no environment variables needed.
+#
+# Usage:
+#   docker compose up -d          # start the database
+#   ./mvnw spring-boot:run        # run the app (or use your IDE's Run button)
+#
+# The schema + lookup data are loaded automatically on first start from
+# DB_Scripts/01-jobportal.sql.
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: jobportal-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: jobportal
+      MYSQL_USER: jobportal
+      MYSQL_PASSWORD: jobportal
+    ports:
+      - "3306:3306"
+    volumes:
+      - jobportal_mysql_data:/var/lib/mysql
+      - ./DB_Scripts/01-jobportal.sql:/docker-entrypoint-initdb.d/01-jobportal.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  jobportal_mysql_data:

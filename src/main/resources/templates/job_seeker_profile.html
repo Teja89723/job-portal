@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/font-awesome.min.css}" />
+    <link rel="stylesheet" type="text/css" media="all"  th:href="@{/css/styles.css}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job Seeker Profile Setup</title>
+</head>
+
+<body>
+<div class="row" style="margin-right:0">
+    <div class="col-5 Job-portal-register">
+        <div class="logo_left mt-3 pt-4 ms-5 pl-5">
+            <h2 class="logo" style="color: white">hotdevjobs <span class="logo_com">.com</span></h2>
+        </div>
+    </div>
+    <div class="col-7">
+        <div class="myForm">
+            <form th:action="@{/job-seeker-profile/addNew}" th:object="${profile}" method="post" enctype="multipart/form-data">
+
+                <div class="row gutters">
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <div class="d-flex justify-content-center">
+                                <h1 class="heading_font font-weight-bold">Job Seeker</h1>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="d-flex justify-content-center heading_font">Set up your Profile</h2>
+                            </div>
+
+                            <div class="card-body ms-2.5">
+
+                                <!-- ================= PERSONAL DETAILS ================= -->
+                                <label class="heading_font font_sub_heading_color">Personal Details</label>
+                                <div class="row">
+                                    <div class="col-md-6 pr-1">
+                                        <input placeholder="First Name" th:field="*{firstName}" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6 pl-1">
+                                        <input placeholder="Last Name" th:field="*{lastName}" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-4 pr-1">
+                                        <input placeholder="Phone Number" th:field="*{phoneNumber}" type="tel" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4 px-1">
+                                        <label class="font_sub_heading_color" style="font-size: 0.8rem;">Date of Birth</label>
+                                        <input th:field="*{dateOfBirth}" type="date" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4 pl-1">
+                                        <select th:field="*{gender}" class="form-control">
+                                            <option value="">Gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                            <option value="Prefer not to say">Prefer not to say</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-4 pr-1">
+                                        <input placeholder="City" th:field="*{city}" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4 px-1">
+                                        <input placeholder="State" th:field="*{state}" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4 pl-1">
+                                        <input placeholder="Country" th:field="*{country}" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-6 pr-1">
+                                        <input placeholder="Work Authorization (e.g. Citizen, Visa)" th:field="*{workAuthorazation}" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6 pl-1">
+                                        <select th:field="*{employmentType}" class="form-control">
+                                            <option value="">Preferred Employment Type</option>
+                                            <option value="Full-time">Full-time</option>
+                                            <option value="Part-time">Part-time</option>
+                                            <option value="Contract">Contract</option>
+                                            <option value="Internship">Internship</option>
+                                            <option value="Freelance">Freelance</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- ================= CAREER DETAILS (Naukri-style) ================= -->
+                                <label class="heading_font font_sub_heading_color mt-3">Career Details</label>
+                                <div class="row">
+                                    <div class="col-md-6 pr-1">
+                                        <input placeholder="Current Designation" th:field="*{currentDesignation}" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6 pl-1">
+                                        <input placeholder="Current Company" th:field="*{currentCompany}" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-4 pr-1">
+                                        <input placeholder="Total Experience (e.g. 2 years 6 months)" th:field="*{totalExperience}" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4 px-1">
+                                        <input placeholder="Current CTC (e.g. 6 LPA)" th:field="*{currentCtc}" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4 pl-1">
+                                        <input placeholder="Expected CTC (e.g. 9 LPA)" th:field="*{expectedCtc}" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12">
+                                        <select th:field="*{noticePeriod}" class="form-control">
+                                            <option value="">Notice Period</option>
+                                            <option value="Immediate">Immediate</option>
+                                            <option value="15 Days or less">15 Days or less</option>
+                                            <option value="1 Month">1 Month</option>
+                                            <option value="2 Months">2 Months</option>
+                                            <option value="3 Months or more">3 Months or more</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- ================= EDUCATION ================= -->
+                                <label class="heading_font font_sub_heading_color mt-3">Education</label>
+                                <div class="row">
+                                    <div class="col-md-4 pr-1">
+                                        <input placeholder="Highest Qualification" th:field="*{highestQualification}" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4 px-1">
+                                        <input placeholder="University / College" th:field="*{university}" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4 pl-1">
+                                        <input placeholder="Graduation Year" th:field="*{graduationYear}" type="number" min="1950" max="2100" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <!-- ================= KEY SKILLS ================= -->
+                                <label class="heading_font font_sub_heading_color mt-3">Key Skills</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input placeholder="e.g. Java, Spring Boot, SQL, React"
+                                               name="skillsInput" th:value="${skillsInput}" type="text" class="form-control" />
+                                        <small class="form-text text-muted">Separate skills with commas.</small>
+                                    </div>
+                                </div>
+
+                                <!-- ================= PROFILE SUMMARY ================= -->
+                                <label class="heading_font font_sub_heading_color mt-3">Profile Summary</label>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <textarea placeholder="A short summary of your experience and career goals"
+                                                  th:field="*{profileSummary}" rows="4" maxlength="3000" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12">
+                                        <input placeholder="LinkedIn Profile URL (optional)" th:field="*{linkedinUrl}" type="text" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <!-- ================= UPLOADS ================= -->
+                                <label class="heading_font font_sub_heading_color mt-3">Resume</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="file" name="resumeFile" class="form-control"
+                                               accept=".pdf,.doc,.docx" />
+                                        <input type="text" name="resume" th:field="*{resume}" class="form-control" hidden />
+                                        <small class="form-text text-muted" th:if="${profile.resume != null}"
+                                               th:text="'Current file: ' + ${profile.resume}"></small>
+                                    </div>
+                                </div>
+
+                                <label class="heading_font font_sub_heading_color mt-2">Profile Photo</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="file" name="image" class="form-control" accept="image/png, image/jpeg" />
+                                        <input type="text" name="profilePhoto" th:field="*{profilePhoto}" class="form-control" hidden />
+                                    </div>
+                                </div>
+
+                                <div class="row mt-4">
+                                    <div class="col d-flex justify-content-center">
+                                        <button type="submit" name="submit" class="btn btn-primary base_button px-4 py-2">Save Profile</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+</html>

@@ -1,0 +1,52 @@
+﻿company_id,company_name,slug,industry,company_size,founded_year,website,hq_city,hq_state,rating
+CMP001,Nexora Pvt Ltd,nexora,Information Technology,201-500,2000,https://www.nexora.example,Bengaluru,Karnataka,3.6
+CMP002,Bytecraft Pvt Ltd,bytecraft,Information Technology,1001-5000,1990,https://www.bytecraft.example,Mumbai,Maharashtra,4.1
+CMP003,Cloudnine Labs Pvt Ltd,cloudninelabs,Information Technology,51-200,1999,https://www.cloudninelabs.example,Bengaluru,Karnataka,4.0
+CMP004,Infravia Pvt Ltd,infravia,Information Technology,5001-10000,2019,https://www.infravia.example,Pune,Maharashtra,3.9
+CMP005,Codeloom Ltd,codeloom,Information Technology,10000+,1985,https://www.codeloom.example,Pune,Maharashtra,4.4
+CMP006,Pixelforge Technologies Pvt Ltd,pixelforge,Information Technology,201-500,2002,https://www.pixelforge.example,Chennai,Tamil Nadu,3.4
+CMP007,Datastream Solutions Pvt Ltd,datastream,Information Technology,501-1000,1991,https://www.datastream.example,Bengaluru,Karnataka,3.8
+CMP008,Quantum Leap Solutions Pvt Ltd,quantumleap,Information Technology,10000+,1987,https://www.quantumleap.example,Mumbai,Maharashtra,4.4
+CMP009,Zenith Soft India Pvt Ltd,zenithsoft,Information Technology,501-1000,1990,https://www.zenithsoft.example,Bengaluru,Karnataka,4.1
+CMP010,Techvantage India Pvt Ltd,techvantage,Information Technology,201-500,2021,https://www.techvantage.example,Noida,Uttar Pradesh,3.5
+CMP011,Appsphere Pvt Ltd,appsphere,Information Technology,51-200,2003,https://www.appsphere.example,Bengaluru,Karnataka,4.8
+CMP012,Neurogrid Technologies Pvt Ltd,neurogrid,Information Technology,501-1000,2002,https://www.neurogrid.example,Noida,Uttar Pradesh,3.9
+CMP013,Finova Solutions Pvt Ltd,finova,Fintech & Banking,201-500,1998,https://www.finova.example,Bengaluru,Karnataka,4.3
+CMP014,PayNest Pvt Ltd,paynest,Fintech & Banking,51-200,2019,https://www.paynest.example,Mumbai,Maharashtra,4.4
+CMP015,Capitalyn Technologies Pvt Ltd,capitalyn,Fintech & Banking,201-500,2020,https://www.capitalyn.example,Pune,Maharashtra,3.6
+CMP016,Lumina Bank Solutions Pvt Ltd,luminabank,Fintech & Banking,10000+,1988,https://www.luminabank.example,Gurugram,Haryana,3.6
+CMP017,Ledgerly Pvt Ltd,ledgerly,Fintech & Banking,501-1000,2002,https://www.ledgerly.example,Gurugram,Haryana,3.3
+CMP018,CoinBridge India Pvt Ltd,coinbridge,Fintech & Banking,201-500,1998,https://www.coinbridge.example,Noida,Uttar Pradesh,4.2
+CMP019,Trustwave Finance Ltd,trustwavefinance,Fintech & Banking,5001-10000,2014,https://www.trustwavefinance.example,Noida,Uttar Pradesh,3.4
+CMP020,Wealthora Technologies Pvt Ltd,wealthora,Fintech & Banking,1001-5000,2019,https://www.wealthora.example,Bengaluru,Karnataka,3.6
+CMP021,ShopSphere India Pvt Ltd,shopsphere,E-commerce & Retail,1001-5000,2010,https://www.shopsphere.example,Hyderabad,Telangana,3.8
+CMP022,CartWave Technologies Pvt Ltd,cartwave,E-commerce & Retail,1-50,1988,https://www.cartwave.example,Pune,Maharashtra,4.6
+CMP023,Bazaarly Technologies Pvt Ltd,bazaarly,E-commerce & Retail,10000+,2012,https://www.bazaarly.example,Mumbai,Maharashtra,4.2
+CMP024,Urbankart Ltd,urbankart,E-commerce & Retail,501-1000,2018,https://www.urbankart.example,Hyderabad,Telangana,3.6
+CMP025,TrendNest India Pvt Ltd,trendnest,E-commerce & Retail,1-50,1992,https://www.trendnest.example,Noida,Uttar Pradesh,4.3
+CMP026,Freshbasket Co,freshbasketco,E-commerce & Retail,10000+,2006,https://www.freshbasketco.example,Chennai,Tamil Nadu,3.4
+CMP027,MediCore Ltd,medicore,Healthcare & Pharma,1-50,2001,https://www.medicore.example,Bengaluru,Karnataka,4.8
+CMP028,HealthBridge Technologies Pvt Ltd,healthbridge,Healthcare & Pharma,1-50,2004,https://www.healthbridge.example,Pune,Maharashtra,4.5
+CMP029,Vitalis Pharma India Pvt Ltd,vitalispharma,Healthcare & Pharma,51-200,2008,https://www.vitalispharma.example,Mumbai,Maharashtra,4.4
+CMP030,CureWell India Pvt Ltd,curewell,Healthcare & Pharma,1001-5000,1985,https://www.curewell.example,Kolkata,West Bengal,4.2
+CMP031,Genomix Ltd,genomix,Healthcare & Pharma,201-500,2004,https://www.genomix.example,Bengaluru,Karnataka,3.6
+CMP032,CareSphere Technologies Pvt Ltd,caresphere,Healthcare & Pharma,1-50,1990,https://www.caresphere.example,Noida,Uttar Pradesh,4.4
+CMP033,LearnLoop Pvt Ltd,learnloop,Education & EdTech,1001-5000,1993,https://www.learnloop.example,Jaipur,Rajasthan,3.4
+CMP034,Eduverse Ltd,eduverse,Education & EdTech,51-200,2001,https://www.eduverse.example,Kolkata,West Bengal,4.0
+CMP035,Skillspring India Pvt Ltd,skillspring,Education & EdTech,51-200,2019,https://www.skillspring.example,Hyderabad,Telangana,4.4
+CMP036,BrightPath Academy Technologies Pvt Ltd,brightpathacademy,Education & EdTech,501-1000,2008,https://www.brightpathacademy.example,Chennai,Tamil Nadu,3.9
+CMP037,Gurukul Digital India Pvt Ltd,gurukuldigital,Education & EdTech,51-200,1999,https://www.gurukuldigital.example,Hyderabad,Telangana,3.3
+CMP038,AutoDrive Motors Pvt Ltd,autodrivemotors,Manufacturing & Automotive,51-200,2022,https://www.autodrivemotors.example,Pune,Maharashtra,3.6
+CMP039,SteelCraft Industries Pvt Ltd,steelcraftindustries,Manufacturing & Automotive,1-50,1999,https://www.steelcraftindustries.example,Chennai,Tamil Nadu,3.3
+CMP040,Precision Works Pvt Ltd,precisionworks,Manufacturing & Automotive,1-50,2017,https://www.precisionworks.example,Noida,Uttar Pradesh,3.6
+CMP041,VoltEdge Mobility Ltd,voltedgemobility,Manufacturing & Automotive,51-200,2021,https://www.voltedgemobility.example,Bengaluru,Karnataka,4.1
+CMP042,Mechano Systems Technologies Pvt Ltd,mechanosystems,Manufacturing & Automotive,10000+,2011,https://www.mechanosystems.example,Gurugram,Haryana,3.5
+CMP043,Stratos Consulting Pvt Ltd,stratosconsulting,Consulting & Services,201-500,2012,https://www.stratosconsulting.example,Mumbai,Maharashtra,3.9
+CMP044,Pinnacle Advisory Pvt Ltd,pinnacleadvisory,Consulting & Services,5001-10000,1991,https://www.pinnacleadvisory.example,Mumbai,Maharashtra,3.3
+CMP045,Orbit Business Services Solutions Pvt Ltd,orbitbusinessservices,Consulting & Services,1-50,2000,https://www.orbitbusinessservices.example,Gurugram,Haryana,3.5
+CMP046,ClearView Partners India Pvt Ltd,clearviewpartners,Consulting & Services,501-1000,1996,https://www.clearviewpartners.example,Hyderabad,Telangana,3.6
+CMP047,Apex Outsourcing Technologies Pvt Ltd,apexoutsourcing,Consulting & Services,1-50,2013,https://www.apexoutsourcing.example,Noida,Uttar Pradesh,4.5
+CMP048,StreamVista India Pvt Ltd,streamvista,Media & Telecom,5001-10000,2019,https://www.streamvista.example,Bengaluru,Karnataka,4.5
+CMP049,Airwave Telecom Pvt Ltd,airwavetelecom,Media & Telecom,10000+,2000,https://www.airwavetelecom.example,Delhi,Delhi,3.5
+CMP050,Pulse Media Ltd,pulsemedia,Media & Telecom,10000+,2010,https://www.pulsemedia.example,Pune,Maharashtra,4.6
+CMP051,Signalix Technologies Pvt Ltd,signalix,Media & Telecom,501-1000,2001,https://www.signalix.example,Hyderabad,Telangana,4.7
