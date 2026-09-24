@@ -10,7 +10,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
-//@SuppressWarnings("JpaAttributeTypeInspection")
 @Entity
 @Table(name = "users")
 @Data
@@ -23,21 +22,21 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
-    @Column(unique=true)
-    private  String email;
+    @Column(unique = true)
+    private String email;
 
     @NotEmpty
-    private  String password;
+    private String password;
 
     private boolean isActive;
 
-    @DateTimeFormat(pattern ="dd-MM-yyyy")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date registrationDate;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "userTypeId", referencedColumnName = "userTypeId")
+    @ManyToOne
+    @JoinColumn(
+        name = "userTypeId",
+        referencedColumnName = "userTypeId"
+    )
     private UsersType userTypeId;
-
-
-
 }

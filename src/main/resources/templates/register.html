@@ -1,119 +1,290 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
+
 <head>
+
     <link
             th:rel="stylesheet"
-            th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "
+            th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
     />
+
     <link
             rel="stylesheet"
             type="text/css"
             media="all"
             th:href="@{/css/font-awesome.min.css}"
     />
+
     <link
             rel="stylesheet"
             type="text/css"
             media="all"
             th:href="@{/css/styles.css}"
     />
+
     <link
             href="https://fonts.googleapis.com/css?family=Montserrat"
             rel="stylesheet"
     />
+
     <meta charset="ISO-8859-1"/>
-    <title>Sign Up</title>
+
+    <title>Sign Up - CareerHub</title>
+
 </head>
 
 <body>
+
 <section class="content hidden-overflow">
+
     <div class="row">
+
+        <!-- LEFT SIDE -->
         <div class="col-6 Job-portal-register">
+
             <div class="logo_left mt-3 pt-4 ms-5 pl-5">
+
                 <h2 class="logo" style="color: white">
-                    CareerHub <span class="logo_com">.com</span>
+
+                    CareerHub
+
+                    <span class="logo_com">
+                        .com
+                    </span>
+
                 </h2>
+
             </div>
+
         </div>
+
+
+        <!-- RIGHT SIDE -->
         <div class="col-6">
+
             <div class="top-margin">
+
                 <div>
+
+                    <!-- TITLE -->
                     <div class="d-flex justify-content-center mb-4">
+
                         <h1 class="heading_font font-weight-bold">
                             Create User Account
                         </h1>
+
                     </div>
+
+
                     <div class="myForm">
+
                         <form
                                 th:action="@{/register/new}"
                                 th:object="${user}"
                                 method="post"
                         >
+
                             <div class="box-body bozero mx2p">
+
+                                <!-- EMAIL -->
                                 <div class="row">
+
                                     <div class="col-md-12">
+
                                         <div class="form-group">
+
+                                            <label
+                                                    for="registerEmail"
+                                                    class="form-label">
+                                                Email Address
+                                            </label>
+
                                             <input
-                                                    placeholder="Email"
+                                                    id="registerEmail"
+                                                    placeholder="Enter your email"
                                                     name="email"
                                                     th:field="*{email}"
                                                     type="email"
                                                     style="width: 100%"
                                                     class="form-control"
+                                                    autocomplete="email"
                                                     required
                                             />
+
+                                            <small class="text-muted">
+                                                Email verification will be required.
+                                            </small>
+
                                         </div>
+
                                     </div>
+
                                 </div>
+
+
+                                <!-- PASSWORD -->
                                 <div class="row">
+
                                     <div class="col-md-12">
+
                                         <div class="form-group">
+
+                                            <label
+                                                    for="registerPassword"
+                                                    class="form-label">
+                                                Password
+                                            </label>
+
                                             <input
-                                                    min="8"
+                                                    id="registerPassword"
+                                                    minlength="8"
                                                     placeholder="Password"
                                                     name="password"
                                                     th:field="*{password}"
                                                     type="password"
                                                     class="form-control pwd"
+                                                    autocomplete="new-password"
                                                     required
                                             />
+
                                         </div>
+
+
+                                        <!-- SHOW PASSWORD -->
+                                        <div class="form-check mb-3">
+
+                                            <input
+                                                    class="form-check-input"
+                                                    type="checkbox"
+                                                    id="showRegisterPassword"
+                                                    onclick="toggleRegisterPassword()"
+                                            />
+
+                                            <label
+                                                    class="form-check-label"
+                                                    for="showRegisterPassword"
+                                                    style="cursor:pointer;"
+                                            >
+                                                Show Password
+                                            </label>
+
+                                        </div>
+
                                     </div>
+
                                 </div>
+
+
+                                <!-- USER TYPE -->
                                 <div class="row">
+
                                     <div class="col-md-12 form-group">
+
+                                        <label
+                                                for="userTypeId"
+                                                class="form-label">
+                                            Account Type
+                                        </label>
+
                                         <select
+                                                id="userTypeId"
                                                 required
                                                 class="form-control"
                                                 th:field="*{userTypeId}"
                                         >
-                                            <th:block th:each="userType :${getAllTypes}">
+
+                                            <th:block th:each="userType : ${getAllTypes}">
+
                                                 <option
                                                         th:text="${userType.userTypeName}"
                                                         th:value="${userType.userTypeId}"
                                                 ></option>
-                                            </th:block>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-footer">
-                                <div class="row">
-                                    <div class="form-group mt-5 col-md-12">
-                                        <button type="submit" class="myBtn py-3">Save</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-</body>
 
-<script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
-<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+                                            </th:block>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- SAVE BUTTON -->
+                            <div class="box-footer">
+
+                                <div class="row">
+
+                                    <div class="form-group mt-5 col-md-12">
+
+                                        <button
+                                                type="submit"
+                                                class="myBtn py-3"
+                                        >
+                                            Continue
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- JQUERY -->
+<script
+        type="text/javascript"
+        th:src="@{/webjars/jquery/jquery.min.js}">
+</script>
+
+
+<!-- BOOTSTRAP -->
+<script
+        type="text/javascript"
+        th:src="@{/webjars/bootstrap/js/bootstrap.min.js}">
+</script>
+
+
+<!-- SHOW / HIDE PASSWORD -->
+<script>
+
+    function toggleRegisterPassword() {
+
+        const password =
+            document.getElementById("registerPassword");
+
+        const checkbox =
+            document.getElementById("showRegisterPassword");
+
+        if (checkbox.checked) {
+
+            password.type = "text";
+
+        } else {
+
+            password.type = "password";
+
+        }
+
+    }
+
+</script>
+
+</body>
 
 </html>

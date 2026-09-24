@@ -42,7 +42,6 @@
         </span>
     </label>
 
-
     <!-- Mobile Menu Button -->
     <button
             class="navbar-toggler"
@@ -56,7 +55,6 @@
         <span class="navbar-toggler-icon"></span>
 
     </button>
-
 
     <!-- Navigation -->
     <div class="collapse navbar-collapse" id="navbarToggler">
@@ -78,7 +76,6 @@
 
             </li>
 
-
             <li class="nav-item"
                 sec:authorize="hasAuthority('Job Seeker')">
 
@@ -92,7 +89,6 @@
 
             </li>
 
-
             <li class="nav-item"
                 sec:authorize="hasAuthority('Job Seeker')">
 
@@ -105,7 +101,6 @@
                 </a>
 
             </li>
-
 
             <!-- ================= RECRUITER MENU ================= -->
 
@@ -122,7 +117,6 @@
 
             </li>
 
-
             <li class="nav-item active"
                 sec:authorize="hasAuthority('Recruiter')">
 
@@ -135,7 +129,6 @@
                 </a>
 
             </li>
-
 
             <li class="nav-item"
                 sec:authorize="hasAuthority('Recruiter')">
@@ -152,7 +145,6 @@
 
         </ul>
 
-
         <!-- ================= USER PHOTO ================= -->
 
         <img
@@ -161,7 +153,7 @@
                 width="50"
                 alt="Profile Photo"
                 th:if="${user != null and user.photosImagePath != null}"
-                th:src="@{${user.photosImagePath}}"
+                th:src="@{${user.photosImagePath}}" />
 
         <!-- ================= USER NAME ================= -->
 
@@ -171,7 +163,6 @@
                     ? user.firstName + ' ' + user.lastName
                     : username}">
         </label>
-
 
         <!-- ================= LOGOUT ================= -->
 
@@ -188,19 +179,15 @@
 
 </header>
 
-
 <!-- ================= MAIN SECTION ================= -->
 
 <section class="section">
 
     <!-- Side Navigation -->
-
     <div class="sidenav px-5">
     </div>
 
-
     <!-- Main Content -->
-
     <article>
 
         <!-- ================= RECRUITER DASHBOARD TITLE ================= -->
@@ -215,12 +202,87 @@
 
         </div>
 
-
         <!-- ================= JOB RESULTS ================= -->
 
         <div class="box mt-3">
 
-            <!-- Job Seeker Title -->
+            <!-- ================================================= -->
+            <!-- JOB SEEKER SEARCH ENGINE                          -->
+            <!-- ================================================= -->
+
+            <form
+                    id="jobSearchForm"
+                    th:action="@{/dashboard/}"
+                    method="get"
+                    sec:authorize="hasAuthority('Job Seeker')"
+                    class="mb-4">
+
+                <div class="row g-2 align-items-center">
+
+                    <!-- Keyword -->
+
+                    <div class="col-md-5">
+
+                        <input
+                                type="text"
+                                class="form-control"
+                                name="job"
+                                placeholder="Job title, skills or company"
+                                th:value="${job}">
+
+                    </div>
+
+                    <!-- Location -->
+
+                    <div class="col-md-5">
+
+                        <input
+                                type="text"
+                                class="form-control"
+                                name="location"
+                                placeholder="City, state or remote"
+                                th:value="${location}">
+
+                    </div>
+
+                    <!-- Search Button -->
+
+                    <div class="col-md-2">
+
+                        <button
+                                type="submit"
+                                class="btn btn-primary w-100">
+
+                            <i class="fas fa-search"></i>
+                            Search
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+            <!-- ================= SEARCH STATUS ================= -->
+
+            <div
+                    class="mb-3 px-3"
+                    sec:authorize="hasAuthority('Job Seeker')">
+
+                <span
+                        th:if="${job != null and !#strings.isEmpty(job)}"
+                        th:text="'Results for: ' + ${job}">
+                </span>
+
+                <span
+                        th:if="${location != null and !#strings.isEmpty(location)}"
+                        th:text="' in ' + ${location}">
+                </span>
+
+            </div>
+
+            <!-- ================= JOB SEEKER TITLE ================= -->
 
             <label
                     class="large-label px-3 mb-3"
@@ -229,7 +291,6 @@
                 Search Results
 
             </label>
-
 
             <!-- ================= JOB LIST ================= -->
 
@@ -253,9 +314,10 @@
 
                                     <span
                                             th:text="${jobPost.jobTitle}">
-                                        Job Title
-                                    </span>
 
+                                        Job Title
+
+                                    </span>
 
                                     <!-- Recruiter: Candidates Applied -->
 
@@ -268,7 +330,6 @@
 
                                     </span>
 
-
                                     <!-- Job Seeker: Applied -->
 
                                     <span
@@ -279,7 +340,6 @@
                                         (Applied)
 
                                     </span>
-
 
                                     <!-- Job Seeker: Saved -->
 
@@ -296,7 +356,6 @@
 
                             </div>
 
-
                             <!-- ================= LOCATION ================= -->
 
                             <div class="col-md-4 text-center">
@@ -312,17 +371,12 @@
 
                             </div>
 
-
                             <!-- ================= JOB TYPE ================= -->
 
                             <div class="col-md-4 text-center">
 
-                                <label
-                                        th:if="${jobPost.jobType != null}"
-                                        th:text="${jobPost.jobType}">
-
+                                <label>
                                     Job Type
-
                                 </label>
 
                             </div>
@@ -340,7 +394,6 @@
     </article>
 
 </section>
-
 
 <!-- ================= JAVASCRIPT ================= -->
 

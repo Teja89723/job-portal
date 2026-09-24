@@ -1,50 +1,68 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <link
             th:rel="stylesheet"
-            th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "
+            th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
     />
+
     <link
             rel="stylesheet"
             type="text/css"
             media="all"
             th:href="@{/css/font-awesome.min.css}"
     />
+
     <link
             rel="stylesheet"
             type="text/css"
             media="all"
             th:href="@{/css/styles.css}"
     />
-    <meta charset="ISO-8859-1" />
-    <title>Login</title>
+
+    <meta charset="ISO-8859-1"/>
+    <title>Login - CareerHub</title>
 </head>
 
 <body>
 
 <div class="row" style="margin-right:0">
+
     <div class="col-md-6">
         <div class="Job-portal-register">
+
             <div class="logo_left mt-3 pt-4 ms-5 pl-5">
-                <h2 class="logo">CareerHub<span class="logo_com">.com</span></h2>
+                <h2 class="logo">
+                    CareerHub<span class="logo_com">.com</span>
+                </h2>
             </div>
+
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="myForm" style="align-items:center">
-            <form th:action="@{/login}" method="post">
-                <h1 class="text-center bold font-weight-bold mb-4">Login</h1>
 
-                <!-- Shows WHY the login failed instead of failing silently -->
+    <div class="col-md-6">
+
+        <div class="myForm" style="align-items:center">
+
+            <form th:action="@{/login}" method="post">
+
+                <h1 class="text-center bold font-weight-bold mb-4">
+                    Login
+                </h1>
+
+                <!-- Login error -->
                 <div class="alert alert-danger" th:if="${param.error}">
                     Invalid email or password. Please try again.
                 </div>
+
+                <!-- Logout message -->
                 <div class="alert alert-info" th:if="${param.logout}">
                     You have been logged out.
                 </div>
 
+                <!-- Email -->
                 <div class="form-group">
                     <input
                             placeholder="Email"
@@ -54,51 +72,147 @@
                             required
                     />
                 </div>
+
+                <!-- Password -->
                 <div class="form-group">
-                    <input
-                            placeholder="Password"
-                            name="password"
-                            type="password"
-                            class="form-control"
-                            required
-                    />
-                </div>
-                <div class="clearfix mb-4">
-                    <label class="float-left form-check-label"
-                    ><input type="checkbox" /> Remember me</label
-                    >
-                    <a href="#" class="color-text float-right">Forgot Password?</a>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="myBtn">Log in</button>
+
+                    <div style="position:relative;">
+
+                        <input
+                                id="loginPassword"
+                                placeholder="Password"
+                                name="password"
+                                type="password"
+                                class="form-control"
+                                required
+                                style="padding-right:45px;"
+                        />
+
+                        <!-- Show / Hide password -->
+                        <button
+                                type="button"
+                                onclick="togglePassword('loginPassword', 'loginPasswordIcon')"
+                                style="
+                                    position:absolute;
+                                    right:10px;
+                                    top:50%;
+                                    transform:translateY(-50%);
+                                    border:none;
+                                    background:transparent;
+                                    cursor:pointer;
+                                    padding:5px;
+                                "
+                                aria-label="Show password"
+                        >
+                            <i
+                                    id="loginPasswordIcon"
+                                    class="fa fa-eye"
+                                    style="font-size:18px;"
+                            ></i>
+                        </button>
+
+                    </div>
+
                 </div>
 
+                <!-- Remember me + Forgot Password -->
+                <div class="clearfix mb-4">
+
+                    <label class="float-left form-check-label">
+                        <input type="checkbox"/>
+                        Remember me
+                    </label>
+
+                    <a
+                            href="#"
+                            class="color-text float-right"
+                            th:href="@{/forgot-password}"
+                    >
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+                <!-- Login button -->
+                <div class="form-group">
+                    <button type="submit" class="myBtn">
+                        Log in
+                    </button>
+                </div>
+
+                <!-- Registration -->
                 <p class="text-center">
+
                     Are you a new User?
+
                     <a
                             class="color-text"
                             href="#"
                             th:href="@{/register}"
                     >
-                        Register Now</a
-                    >
+                        Register Now
+                    </a>
+
                 </p>
+
             </form>
+
         </div>
+
     </div>
+
 </div>
+
+<!-- jQuery -->
+<script
+        type="text/javascript"
+        th:src="@{/webjars/jquery/jquery.min.js}">
+</script>
+
+<!-- Popper -->
+<script
+        type="text/javascript"
+        th:src="@{/webjars/popper.js/umd/popper.min.js}">
+</script>
+
+<!-- Bootstrap -->
+<script
+        type="text/javascript"
+        th:src="@{/webjars/bootstrap/js/bootstrap.min.js}">
+</script>
+
+<!-- Existing JavaScript -->
+<script
+        type="text/javascript"
+        th:src="@{/js/main.js}">
+</script>
+
+<!-- Show / Hide Password -->
+<script>
+
+    function togglePassword(passwordId, iconId) {
+
+        const passwordInput = document.getElementById(passwordId);
+        const passwordIcon = document.getElementById(iconId);
+
+        if (passwordInput.type === "password") {
+
+            passwordInput.type = "text";
+
+            passwordIcon.classList.remove("fa-eye");
+            passwordIcon.classList.add("fa-eye-slash");
+
+        } else {
+
+            passwordInput.type = "password";
+
+            passwordIcon.classList.remove("fa-eye-slash");
+            passwordIcon.classList.add("fa-eye");
+
+        }
+    }
+
+</script>
+
 </body>
-<script
-        type="text/javascript"
-        th:src="@{/webjars/jquery/jquery.min.js}"
-></script>
-<script
-        type="text/javascript"
-        th:src="@{/webjars/popper.js/umd/popper.min.js}"
-></script>
-<script
-        type="text/javascript"
-        th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"
-></script>
-<script type="text/javascript" th:src="@{/js/main.js}"></script>
 </html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Registration Complete - CareerHub</title>
+
+    <link
+        rel="stylesheet"
+        th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+    />
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/styles.css}"
+    />
+
+    <link
+        rel="stylesheet"
+        th:href="@{/css/font-awesome.min.css}"
+    />
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat"
+        rel="stylesheet"
+    />
+</head>
+
+<body>
+
+<section class="content hidden-overflow">
+
+    <div class="row">
+
+        <!-- LEFT SIDE -->
+        <div class="col-6 Job-portal-register">
+
+            <div class="logo_left mt-3 pt-4 ms-5 pl-5">
+
+                <h2 class="logo" style="color: white;">
+                    CareerHub
+                    <span class="logo_com">.com</span>
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="col-6">
+
+            <div class="top-margin">
+
+                <div class="myForm">
+
+                    <div class="text-center">
+
+                        <div class="mb-4">
+
+                            <i
+                                class="fa fa-check-circle"
+                                style="font-size: 70px; color: #28a745;">
+                            </i>
+
+                        </div>
+
+                        <h1 class="heading_font font-weight-bold">
+                            Registration Successful!
+                        </h1>
+
+                        <p class="mt-3">
+                            Your email has been successfully verified.
+                        </p>
+
+                        <p>
+                            Your CareerHub account has been created successfully.
+                        </p>
+
+
+                        <div class="mt-4">
+
+                            <a
+                                th:href="@{/login}"
+                                class="myBtn py-3 px-5">
+                                Go to Login
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script
+    type="text/javascript"
+    th:src="@{/webjars/jquery/jquery.min.js}">
+</script>
+
+<script
+    type="text/javascript"
+    th:src="@{/webjars/bootstrap/js/bootstrap.min.js}">
+</script>
+
+</body>
+
+</html>
